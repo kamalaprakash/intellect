@@ -1,0 +1,13 @@
+[{   
+    "username":"kamal",
+    "role":"admin"
+},
+{   
+    "username":"prakash",
+    "role":"superadmin"
+},
+{   
+    "username":"raja",
+    "role":"normal"
+}
+]
