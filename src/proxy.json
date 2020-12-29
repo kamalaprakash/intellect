@@ -1,0 +1,7 @@
+{
+    "*": {
+        "target": "https://swapi.dev/api/people",
+        "secure": true,
+        "changeOrigin": true
+    }
+}

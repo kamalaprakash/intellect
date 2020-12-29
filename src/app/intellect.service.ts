@@ -15,6 +15,8 @@ export class IntellectService {
     });
   }
   peopleList() {
-    return this.httpClient.get("https://swapi.dev/api/people");
+    return this.httpClient.get("https://swapi.dev/api/people").subscribe((people) => {
+      console.log('people', people);
+    });
   }
 }

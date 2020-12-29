@@ -7,36 +7,32 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardActions, MatCardContent, MatCardHeader, MatCardModule, MatCardSubtitle, MatCardTitle } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
 import { IntellectRoutingModule } from './intellect-routing.module';
 import { IntellectService } from './intellect.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserLandingPageComponent } from './user-landing-page/user-landing-page.component';
 import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
 import { AuthServiceService } from './auth-service.service';
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ModalContentComponentComponent } from './admin-landing-page/modal-content-component/modal-content-component.component';
+import { SwapiService } from 'ng2-swapi';
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    AdminLandingPageComponent,
-    UserLandingPageComponent
+    AdminLandingPageComponent, UserLandingPageComponent, ModalContentComponentComponent, ModalContentComponentComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardHeader,
-    MatCardTitle,
-    MatCardSubtitle,
-    MatCardContent,
-    MatCardActions,
     IntellectRoutingModule,
+    ModalModule.forRoot(),
     HttpClientModule
   ],
-  providers: [IntellectService, AuthServiceService],
+  entryComponents: [ModalContentComponentComponent],
+  providers: [IntellectService, AuthServiceService, BsModalRef, SwapiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
