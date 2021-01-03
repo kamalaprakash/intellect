@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { IntellectService } from '../../intellect.service';
 @Component({
-  selector: 'app-modal-content-component',
-  templateUrl: './modal-content-component.component.html',
-  styleUrls: ['./modal-content-component.component.css']
+  selector: 'app-user-detail-page',
+  templateUrl: './user-detail-page.component.html',
+  styleUrls: ['./user-detail-page.component.css']
 })
-export class ModalContentComponentComponent implements OnInit {
-  title: string = "Admin Detail Page";
+export class UserDetailPageComponent implements OnInit {
+  title: string = "User Detail Page";
   closeBtnName: string;
   peopleDetail;
   peopleList;
@@ -36,3 +36,4 @@ export class ModalContentComponentComponent implements OnInit {
     });
   }
 }
+

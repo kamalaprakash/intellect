@@ -23,11 +23,16 @@ export class LoginPageComponent implements OnInit {
     if (this.form.value.username === '' || this.form.value.password === '') {
       this.error = 'Please Enter UserName And Password';
     } else if (this.form.value.username.length > 0 && this.form.value.password.length > 0) {
-      const existingUser = this.intellectService.currentUser.find((loggedUser) => loggedUser.username === this.form.value.username);
-      if (existingUser) {
-        localStorage.setItem('username', this.form.value.username);
+      const existingUser = this.intellectService.currentUser.find((loggedUser) => loggedUser.username.toLowerCase() === this.form.value.username.toLowerCase());
+      const passwordMatch = this.intellectService.currentUser.find((loggedUser) => loggedUser.password.toLowerCase() === this.form.value.password.toLowerCase());
+      if (existingUser && passwordMatch) {
+        localStorage.setItem('username', this.form.value.username.toLowerCase());
         this.router.navigate(['admin-landing-page']);
-      } else {
+      }
+      else if (existingUser || passwordMatch) {
+        this.error = 'Please Enter Valid UserName And Password';
+      }
+      else {
         this.error = 'Your Not A Register User';
       }
     } else {

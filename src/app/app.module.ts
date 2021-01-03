@@ -16,23 +16,27 @@ import { AuthServiceService } from './auth-service.service';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ModalContentComponentComponent } from './admin-landing-page/modal-content-component/modal-content-component.component';
-import { SwapiService } from 'ng2-swapi';
+import { Angular2SwapiModule } from 'angular2-swapi';
+import { UserDetailPageComponent } from './user-landing-page/user-detail-page/user-detail-page.component';
+// import { SwapiService } from 'ng2-swapi';
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    AdminLandingPageComponent, UserLandingPageComponent, ModalContentComponentComponent, ModalContentComponentComponent
+    AdminLandingPageComponent, UserLandingPageComponent,
+    ModalContentComponentComponent, ModalContentComponentComponent, UserDetailPageComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    Angular2SwapiModule,
     ReactiveFormsModule,
     IntellectRoutingModule,
     ModalModule.forRoot(),
     HttpClientModule
   ],
   entryComponents: [ModalContentComponentComponent],
-  providers: [IntellectService, AuthServiceService, BsModalRef, SwapiService],
+  providers: [IntellectService, AuthServiceService, BsModalRef],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

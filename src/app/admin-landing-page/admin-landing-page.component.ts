@@ -2,27 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { IntellectService } from '../intellect.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { ModalContentComponentComponent } from './modal-content-component/modal-content-component.component';
-import { SwapiService } from 'ng2-swapi';
+import { Angular2SwapiService } from 'angular2-swapi';
+
 @Component({
   selector: 'app-admin-landing-page',
   templateUrl: './admin-landing-page.component.html',
   styleUrls: ['./admin-landing-page.component.css']
 })
-export class AdminLandingPageComponent {
+export class AdminLandingPageComponent implements OnInit {
 
   constructor(public intellectService: IntellectService, private modalService: BsModalService,
-    private swapi: SwapiService) { }
+    private _swapi: Angular2SwapiService) { }
   bsModalRef: BsModalRef;
-
-
+  peopleData;
   ngOnInit(): void {
-    this.intellectService.peopleList();
-    // this.swapi.getPeople(null, false).subscribe((people) => {
-    //   console.log('people', people);
-    // });
+    this.intellectService.peopleList().subscribe((people) => {
+      this.peopleData = people;
+    });
   }
-  openModalWithComponent() {
-    this.bsModalRef = this.modalService.show(ModalContentComponentComponent, {});
+  openModalWithComponent(peopleDetail) {
+    const initialState = {
+      peopleDetail: peopleDetail
+    };
+    this.bsModalRef = this.modalService.show(ModalContentComponentComponent, { initialState });
     this.bsModalRef.content.closeBtnName = 'Close';
   }
 }

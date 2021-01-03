@@ -1,13 +1,16 @@
 [{   
     "username":"kamal",
+    "password":"kamal",
     "role":"admin"
 },
 {   
     "username":"prakash",
+    "password":"prakash",
     "role":"superadmin"
 },
 {   
     "username":"raja",
+    "password":"raja",
     "role":"normal"
 }
 ]

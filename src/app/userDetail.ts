@@ -1,4 +1,5 @@
 export interface UserDetail {
-    role: string;
-    username: string;
-  }
+  role: string;
+  username: string;
+  password: string;
+}

@@ -1,4 +1,177 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* FontAwesome for working BootSnippet :> */
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+#team {
+  background: #eee !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #108d6f;
+  border-color: #108d6f;
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007b5e;
+  border-color: #007b5e;
+}
+
+section {
+  padding: 60px 0;
+}
+
+section .section-title {
+  text-align: center;
+  color: #007b5e;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+#team .card {
+  border: none;
+  background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.user-landing .card {
+  border: 1px solid gray;
+  background: rgb(182 191 170);
+  color: darkred;
+  padding: 10px;
+}
+
+.user-landing .col-sm-6 {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.mainflip {
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -moz-transition: 1s;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+
+  background: #e4dfe4;
+  padding: 15px;
+}
+
+.frontside {
+  position: relative;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  z-index: 2;
+  margin-bottom: 30px;
+}
+
+.backside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+  -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+  box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: 1s;
+  -moz-transform-style: preserve-3d;
+  -o-transition: 1s;
+  -o-transform-style: preserve-3d;
+  -ms-transition: 1s;
+  -ms-transform-style: preserve-3d;
+  transition: 1s;
+  transform-style: preserve-3d;
+}
+
+.backside {
+  position: relative;
+}
+
+.image-flip {
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.mb-2 {
+  margin-bottom: 20px;
+}
+
+.backside .card {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+.backside .card a {
+  font-size: 18px;
+  color: #007b5e !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+  color: #007b5e !important;
+}
+
+.card-body {
+
+  text-transform: capitalize;
+}
+
+.frontside .card .card-body img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
